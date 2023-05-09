@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <div class="menu">
       <div class="data-menu">
@@ -19,9 +20,10 @@
             <h3><i class="bx bx-food-menu"></i> Menu Japlak Nampol</h3>
           </div>
           <div class="menu-list">
+            <!-- menu top -->
             <div class="menu-search">
               <div class="menu-kategori">
-                <select>
+                <select id="kategori" onchange="kategoriList(this)">
                   <option value="all">Semua Menu</option>
                   <option value="makanan">Makanan</option>
                   <option value="minuman">Minuman</option>
@@ -36,10 +38,12 @@
                 />
 
                 <div class="icon-search">
-                    <i class='bx bx-search-alt'></i>
+                  <i class="bx bx-search-alt"></i>
                 </div>
               </div>
             </div>
+            <!-- menu list -->
+            <div class="menu-data" id="list-item"></div>
           </div>
         </div>
       </div>
@@ -51,6 +55,20 @@
           <div class="title-keranjang">
             <h3><i class="bx bx-basket"></i> Keranjang</h3>
           </div>
+
+          <div class="keranjang-list">
+            
+          </div>
+
+          <div class="keranjang-bayar">
+            <div class="total">
+              <p>Total Bayar</p>
+              <p>:</p>
+              <p class="bayar">Rp.0</p>
+            </div>
+            <button class="btn-bayar">Selesaikan Pesanan</button>
+          </div>
+
         </div>
       </div>
     </div>
