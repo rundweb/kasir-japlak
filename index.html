@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kasir</title>
+    <!-- mengarah ke style.css yang ada di folder style -->
     <link rel="stylesheet" href="style/style.css" />
+    <!-- memakai boxicon untuk mendapatkan icon -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -13,31 +15,37 @@
   </head>
 
   <body>
-
+    <!-- untuk menampilkan ketika pembayaran berhasil -->
     <div class="berhasil">
       <div class="berhasil-content">
         <h2>Pembayaran Berhasil</h2>
-        <i class='bx bx-check'></i>
+        <i class="bx bx-check"></i>
         <a href="index.html">Selesai</a>
       </div>
     </div>
 
+    <!-- menampilkan data menu dan keranjang -->
+
     <div class="menu">
       <div class="data-menu">
         <div class="data-menu-content">
+          <!-- judul untuk memesan makanan -->
           <div class="title-data">
             <h3><i class="bx bx-food-menu"></i> Menu Japlak Nampol</h3>
           </div>
           <div class="menu-list">
-            <!-- menu top -->
+            <!-- menampilkan search ada search kategori dan ada search diketik -->
             <div class="menu-search">
               <div class="menu-kategori">
+                <!-- untuk search kategori functionya ada di main.js nama functionya kategoriList()-->
                 <select id="kategori" onchange="kategoriList(this)">
                   <option value="all">Semua Menu</option>
                   <option value="makanan">Makanan</option>
                   <option value="minuman">Minuman</option>
                 </select>
               </div>
+
+              <!-- untuk search nama diketik functionya ada di main.js nama functionya search()-->
               <div class="search">
                 <input
                   type="text"
@@ -51,37 +59,39 @@
                 </div>
               </div>
             </div>
-            <!-- menu list -->
+            <!-- menampilkan data menu ada di java script di main.js nama functionya tampilData() -->
             <div class="menu-data" id="list-item"></div>
           </div>
         </div>
       </div>
 
-      <!-- keranjang -->
+      <!-- menampilkan keranjang -->
 
       <div class="keranjang">
         <div class="keranjang-content">
+          <!-- judul keranjang -->
           <div class="title-keranjang">
             <h3><i class="bx bx-basket"></i> Keranjang</h3>
           </div>
+          <!-- menampilkan list keranjang ada di main.js nama functionya tampilKeranjang() -->
+          <div class="keranjang-list"></div>
 
-          <div class="keranjang-list">
-            
-          </div>
-
+          <!-- menampilakan total bayar yang udah di pesan -->
           <div class="keranjang-bayar">
             <div class="total">
               <p>Total Bayar</p>
               <p>:</p>
+              <!-- functionya ada di main.js nama fungctionya totalBayar() -->
               <p class="bayar">Rp.0</p>
             </div>
-            <button class="btn-bayar" onclick="btnBayar()">Selesaikan Pesanan</button>
+            <button class="btn-bayar" onclick="btnBayar()">
+              Selesaikan Pesanan
+            </button>
           </div>
-
         </div>
       </div>
     </div>
-
+    <!-- untuk mengarah ke file yang bernama main.js -->
     <script src="main/main.js"></script>
   </body>
 </html>

@@ -1,3 +1,4 @@
+// data makanan dan minuman yang di sajikan
 const menu = [
   {
     id: 1,
@@ -99,8 +100,10 @@ const menu = [
   },
 ];
 
+// data keranjang ketika memesan makanan akan di tambahkan keranjangs
 const keranjangs = [];
 
+//function untuk menampilkan semua menu
 function tampilData() {
   document.querySelector(".menu-data").innerHTML = "";
   for (let i = 0; i < menu.length; i++) {
@@ -121,8 +124,10 @@ function tampilData() {
 }
 tampilData();
 
+// function untuk pengakategorian
 function kategoriList(menus) {
   var selectValue = menus.value;
+  //   jika memilih semua menu akan menampilkan semua menu
   if (selectValue === "all") {
     document.querySelector(".menu-data").innerHTML = "";
     for (let i = 0; i < menu.length; i++) {
@@ -140,7 +145,9 @@ function kategoriList(menus) {
         `;
       document.querySelector(".menu-data").innerHTML += tagMakanan;
     }
-  } else if (selectValue === "makanan") {
+  }
+  //   jika memilih kategori makanan maka akan menampilkan makanan saja
+  else if (selectValue === "makanan") {
     document.querySelector(".menu-data").innerHTML = "";
     for (let i = 0; i < menu.length; i++) {
       if (menu[i].kategori === "makanan") {
@@ -159,7 +166,9 @@ function kategoriList(menus) {
         document.querySelector(".menu-data").innerHTML += tagMakanan;
       }
     }
-  } else if (selectValue === "minuman") {
+  }
+  //   jika memilih kategori minuman maka akan menampilkan minuman saja
+  else if (selectValue === "minuman") {
     document.querySelector(".menu-data").innerHTML = "";
     for (let i = 0; i < menu.length; i++) {
       if (menu[i].kategori === "minuman") {
@@ -181,6 +190,7 @@ function kategoriList(menus) {
   }
 }
 
+// function untuk search diketik sesuai nama
 function search() {
   const searchItem = document.getElementById("searchItem").value.toUpperCase(),
     listItem = document.getElementById("list-item"),
@@ -202,6 +212,7 @@ function search() {
   }
 }
 
+// function untuk memasukan makanan ke keranjangs
 function tambahMenu(id, kategori, nama, harga, gambar) {
   let namaKategori = kategori,
     namaNama = nama,
@@ -217,6 +228,8 @@ function tambahMenu(id, kategori, nama, harga, gambar) {
       jumlahKeranjang: 1,
       harga: hargaNama,
     };
+
+    // jika nama makanan sama maka akan menambahkan jumlahnya
     if (keranjangs.find((nama) => nama.namaKeranjang == namaNama)) {
       for (let i = 0; i < keranjangs.length; i++) {
         if (keranjangs[i].namaKeranjang == namaNama) {
@@ -237,6 +250,7 @@ function tambahMenu(id, kategori, nama, harga, gambar) {
   }
 }
 
+// /function untuk menampilkan total nayar berapa
 function totalBayar() {
   let totalHarusBayar = 0;
   for (let i = 0; i < keranjangs.length; i++) {
@@ -245,6 +259,8 @@ function totalBayar() {
     document.querySelector(".bayar").innerHTML = "Rp." + totalHarusBayar;
   }
 }
+
+// function untuk menampilkan menu yang di masukan ke keranjang
 
 function tampilkanKeranjang() {
   document.querySelectorAll(".kernjang-data").forEach((data) => data.remove());
@@ -273,7 +289,7 @@ function tampilkanKeranjang() {
     document.querySelector(".keranjang-list").innerHTML += tagKeranjang;
   });
 }
-
+// function untuk menghapus menu mnakanan yang tidak jadi di pesan atau salah
 function btnHapus(id) {
   keranjangs.splice(id, 1);
   tampilkanKeranjang();
@@ -282,7 +298,7 @@ function btnHapus(id) {
     document.querySelector(".bayar").innerHTML = "Rp. 0";
   }
 }
-
+// function untuk menyelesaikan pembayaran
 function btnBayar() {
   if (keranjangs.length === 0) {
     alert("Silahkan Pesan Makanan terlebih dahulu.");
