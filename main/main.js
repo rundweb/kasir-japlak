@@ -246,7 +246,6 @@ function totalBayar() {
   }
 }
 
-
 function tampilkanKeranjang() {
   document.querySelectorAll(".kernjang-data").forEach((data) => data.remove());
   keranjangs.forEach((val, i) => {
@@ -279,7 +278,15 @@ function btnHapus(id) {
   keranjangs.splice(id, 1);
   tampilkanKeranjang();
   totalBayar();
-  if(keranjangs.length === 0){
-    document.querySelector(".bayar").innerHTML = "Rp. 0"
+  if (keranjangs.length === 0) {
+    document.querySelector(".bayar").innerHTML = "Rp. 0";
+  }
+}
+
+function btnBayar() {
+  if (keranjangs.length === 0) {
+    alert("Silahkan Pesan Makanan terlebih dahulu.");
+  } else {
+    document.querySelector(".berhasil").style.display = "flex";
   }
 }

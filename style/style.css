@@ -142,10 +142,9 @@ select {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  
+
   text-align: center;
 }
-
 
 .menu-gambar img {
   width: 100px;
@@ -154,7 +153,7 @@ select {
   border-radius: 50%;
 }
 
-.menu-title h2{
+.menu-title h2 {
   font-size: 16px;
   letter-spacing: 0.5px;
   margin-bottom: 5px;
@@ -162,14 +161,14 @@ select {
   color: rgb(50, 50, 50);
 }
 
-.menu-title p{
+.menu-title p {
   color: gray;
   font-weight: 500;
   font-size: 14px;
   margin-bottom: 10px;
 }
 
-.btn-tambah{
+.btn-tambah {
   background-color: var(--bg-color);
   border: none;
   width: 130px;
@@ -180,15 +179,14 @@ select {
   cursor: pointer;
 }
 
-.keranjang-list{
+.keranjang-list {
   display: flex;
   flex-direction: column;
   padding: 16px;
   width: 100%;
-  margin-bottom: 40px;
 }
 
-.kernjang-data{
+.kernjang-data {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -197,35 +195,35 @@ select {
   padding: 10px 20px;
   border-radius: 10px;
 }
-.keranjang-hapus{
-    width: 45px;
-    height: 45px;
-    border-radius: 50px;
-    box-shadow: 2px 2px 12px rgba(91, 91, 91, 0.188);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.keranjang-hapus {
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+  box-shadow: 2px 2px 12px rgba(91, 91, 91, 0.188);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.bx-trash{
+.bx-trash {
   font-size: 26px;
   color: red;
 }
 
-.keranjang-gambar img{
+.keranjang-gambar img {
   width: 80px;
   height: 80px;
   object-fit: cover;
   border-radius: 50%;
 }
 
-.keranjang-bayar{
+.keranjang-bayar {
   display: flex;
   flex-direction: column;
   padding: 16px;
 }
 
-.total{
+.total {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -233,13 +231,12 @@ select {
   margin-bottom: 20px;
 }
 
-.total p{
+.total p {
   font-size: 20px;
   font-weight: 800;
-
 }
 
-.btn-bayar{
+.btn-bayar {
   height: 45px;
   border: none;
   border-radius: 8px;
@@ -248,4 +245,44 @@ select {
   background-color: var(--bg-color);
   color: white;
   cursor: pointer;
+}
+
+.berhasil {
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(91, 91, 91, 0.459);
+  width: 100%;
+  min-height: 100vh;
+}
+
+.berhasil-content {
+  background-color: white;
+  box-shadow: 5px 5px 20px rgba(226, 226, 226, 0.188);
+  padding: 30px 80px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.berhasil-content h2 {
+  color: gray;
+  letter-spacing: .3px;
+}
+
+.berhasil-content a{
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  background-color: var(--bg-color);
+}
+
+.bx-check {
+  font-size: 200px;
+  color: var(--bg-color);
+  margin-top: -24px;
 }
